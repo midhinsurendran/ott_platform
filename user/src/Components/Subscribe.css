@@ -1,0 +1,43 @@
+.subscribe-page {
+    background: #659999;  
+background: -webkit-linear-gradient(to right, #f4791f, #659999);  
+background: linear-gradient(to right, #f4791f, #659999); 
+
+    background-size: cover;
+    color: white; 
+    min-height: 100vh; 
+    padding: 50px 0; 
+  }
+  
+  .h2 {
+    background: #FF0000;
+    background: linear-gradient(to left, #FF0000 0%, #000000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 40px;
+  }
+  
+  .card {
+    border-radius: 15px;
+    background: #F8FFE8;
+    background: linear-gradient(to right, #F8FFE8 0%, #E3F5AB 33%, #B7DF2D 100%);
+
+    
+    transition: transform 0.3s, box-shadow 0.3s; 
+  }
+  
+  .card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 4px 20px rgb(255, 255, 255); 
+  }
+  
+  .card-cost {
+    font-size: 1.5rem;
+    color: #da275a;
+  }
+  
+  .list-group-item {
+    background-color: transparent;
+    border: none; 
+  }
+  

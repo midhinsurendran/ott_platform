@@ -1,0 +1,16 @@
+body {
+    background: linear-gradient(135deg, #1e1e2f, #23252f, #3b3d53);
+    font-family: Arial, sans-serif;
+    color: rgb(27, 48, 67);
+  }
+#cardbg{
+    top: 40%;
+    bottom: 50%;
+    background-color: rgb(236, 213, 213);
+    border-radius: 15px;
+}
+
+h2,a{
+    text-align: center;
+}
+

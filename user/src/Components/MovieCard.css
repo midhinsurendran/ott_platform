@@ -1,0 +1,63 @@
+.movie-card {
+  width: 100%; /* Full width of the container */
+  max-width: 250px; /* Set a max-width for cards */
+  padding: 20px;
+  background: #fff;
+  border: 6px solid #000;
+  box-shadow: 12px 12px 0 #000;
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin: 20px; /* Space between cards */
+  position: relative; /* For positioning the button */
+}
+
+.movie-card:hover {
+  transform: translate(-5px, -5px);
+  box-shadow: 17px 17px 0 #000;
+}
+
+.movie-card__image {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+}
+
+.movie-card__details {
+  margin-top: 15px; /* Space between image and details */
+  position: relative;
+}
+
+.movie-card__title {
+  font-size: 20px; /* Slightly smaller font size */
+  font-weight: bold;
+  color: #000;
+  text-transform: uppercase;
+  display: block; /* Ensures it takes full width */
+}
+
+.movie-card__rating {
+  font-size: 16px;
+  color: #000;
+  margin-top: 5px; /* Space above rating */
+}
+
+.movie-card__button {
+  border: 3px solid #000;
+  background: transparent;
+  color: #000;
+  font-size: 24px; /* Size for plus button */
+  cursor: pointer;
+  position: absolute; /* Absolute positioning */
+  bottom: 15px; /* Position it at the bottom of the card */
+  right: 15px; /* Align it to the right */
+  width: 40px; /* Width of the button */
+  height: 40px; /* Height of the button */
+  border-radius: 50%; /* Circle button */
+  display: flex; /* Flex to center content */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  transition: background-color 0.3s;
+}
+
+.movie-card__button:hover {
+  background-color: #000; /* Fill color on hover */
+  color: #fff; /* Change text color on hover */
+}

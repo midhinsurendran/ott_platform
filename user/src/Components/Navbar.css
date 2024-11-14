@@ -1,0 +1,32 @@
+.navbar {
+    background-color: #f8f9fa; /* Light background */
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    color: #ff0000; /* Bright red for brand name */
+}
+
+.navbar-nav .nav-link {
+    color: black;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link.active {
+    color: #ff0000; /* Bright red for active link */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ff4d4d; /* Light red for hover effect */
+}
+
+.btn-outline-dark {
+    color: black;
+    border-color: black;
+}
+
+.btn-outline-dark:hover {
+    color: white;
+    background-color: #ff0000; /* Red color on hover */
+    border-color: #ff0000;
+}

@@ -1,0 +1,29 @@
+.hero-section {
+  height: 90vh;
+  background-image: url('hogwarts_legacy-wallpaper-3840x2160.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust the overlay transparency */
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-section h1, .hero-section p {
+  background-color: transparent; /* Ensure text background is transparent */
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}

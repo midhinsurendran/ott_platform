@@ -1,0 +1,48 @@
+/* SubscriptionPlan.css */
+.subscription-plan-page {
+  background: #659999;  /* Fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #f4791f, #659999);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #f4791f, #659999); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-size: cover; /* Cover the entire area */
+  color: white; /* White text color */
+  min-height: 100vh; /* Full height */
+  padding: 50px 0; /* Vertical padding */
+}
+
+h2 {
+  background: #FF0000;
+  background: linear-gradient(to left, #FF0000 0%, #000000 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 40px;
+}
+
+.table {
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+  border-radius: 15px; /* Rounded edges */
+  overflow: hidden; /* Ensure borders are rounded */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Light border for visibility */
+}
+
+.table th, .table td {
+  color: #ffffff; /* White text for table content */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Light border for table cells */
+}
+
+.table th {
+  background-color: rgba(0, 0, 0, 0.5); /* Darker background for headers */
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(255, 255, 255, 0.1); /* Slightly lighter background for odd rows */
+}
+
+.table-striped tbody tr:nth-of-type(even) {
+  background-color: rgba(255, 255, 255, 0.05); /* Slightly lighter background for even rows */
+}
+
+/* Make table entries darker */
+.table td {
+  background-color: rgba(0, 0, 0, 0.8); /* Darker background for table cells */
+  color: #f8f9fa; /* Light color for text */
+}
