@@ -9,19 +9,11 @@ import axios from 'axios';
 
 const WatchHistory = () => {
   const [watchHistory,setWatchHistory] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
   const pagesize=4;
   const [currentpage,setcurrentpage] = useState(1);
 
-  const startindex = (currentpage-1)*pagesize;
-  const endindex=startindex + pagesize;
-  const currentMovies = watchHistory.slice(startindex,endindex);
-  const totalpages = Math.ceil(movies.length/pagesize)
-
-  const handlepage=(event,value)=>{
-    setcurrentpage(value)
-  };
-
-  useEffect((currentpage) => {
+  function fetchWatchHistory() {
     axios.get("http://127.0.0.1:8000/movie/viewhistory",{
       headers: { Authorization: `Token ${localStorage.getItem('token')}` },
     })
@@ -31,8 +23,24 @@ const WatchHistory = () => {
     .catch((error) => {
       console.error("Error fetching watch history:", error);
     });
-  }, [currentpage]);
+  }
 
+  const filteredHistory = watchHistory.filter((movie) =>
+    movie.movie.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  const startindex = (currentpage - 1) * pagesize;
+  const endindex = startindex + pagesize;
+  const currentMovies = filteredHistory.slice(startindex, endindex); 
+  const totalpages = Math.ceil(filteredHistory.length / pagesize);
+
+  const handlepage=(event,value)=>{
+    setcurrentpage(value)
+  };
+
+  useEffect(()=>{
+    fetchWatchHistory();
+  }, []);
  
   return (
     <div>
@@ -41,7 +49,7 @@ const WatchHistory = () => {
     <div className="d-flex justify-content-between mt-4  mb-4">
             <h2 className="text-dark">Watch History</h2>
             <div className="search-bar-container">
-              <SearchBar/>
+              <SearchBar setSearchQuery={setSearchQuery}/>
             </div>
           </div>
       <div className="row">
@@ -52,6 +60,7 @@ const WatchHistory = () => {
               title={movie.movie.title} 
               thumbnail={movie.movie.thumbnail}
               date_time={movie.date_time}
+              refresh={fetchWatchHistory}
             />
           </div>
         ))}

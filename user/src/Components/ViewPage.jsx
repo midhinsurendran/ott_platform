@@ -26,6 +26,8 @@ function ViewPage() {
         headers: { Authorization: `Token ${token}` },
       })
       .then(() => {
+        console.log("Video URL:", response.data.video); // Debugging
+        setPage(response.data);
         console.log("Movie added to watch history");
       })
       .catch(error => {
@@ -36,6 +38,7 @@ function ViewPage() {
       console.error("Error fetching movie details:", error);
     });
   },[id]);
+
   return (
     <div>
         <Navbar/>
@@ -46,10 +49,14 @@ function ViewPage() {
       </div>
     
       <div className="mb-4 d-flex justify-content-center">
+        {page.video ? (
         <video width="88%" height="40%" controls>
           <source src={page.video} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
+        ) : (
+          <p>Loading video....</p>
+        )}
       </div>
 
     <div className="container" id="desc">

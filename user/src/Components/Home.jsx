@@ -10,9 +10,11 @@ import axios from "axios";
 
 function Home() {
   var [movies ,setMovies] = useState([]);
+  const [searchQuery,setSearchQuery] = useState("");
   const pagesize=4;
   const [currentpage,setcurrentpage] = useState(1);
   const token = localStorage.getItem('token');
+  
   function fetchMovies(){
     axios.get('http://127.0.0.1:8000/movie/home',{
       headers: {
@@ -26,18 +28,22 @@ function Home() {
     });
   }
 
+  const filteredMovies = movies.filter((movie) =>
+    movie.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   const startindex = (currentpage-1)*pagesize;
   const endindex=startindex + pagesize;
-  const currentMovies = movies.slice(startindex,endindex);
-  const totalpages = Math.ceil(movies.length/pagesize)
+  const currentMovies = filteredMovies.slice(startindex,endindex);
+  const totalpages = Math.ceil(filteredMovies.length/pagesize)
 
   const handlepage=(event,value)=>{
     setcurrentpage(value)
   };
   
   useEffect(()=>{
-    fetchMovies(currentpage)
-  },[currentpage])
+    fetchMovies()
+  },[]);
   
   return (
     <div className="homepage">
@@ -57,7 +63,7 @@ function Home() {
         <div className="d-flex justify-content-between  mb-4">
             <h2 className="text-dark">Popular Movies</h2>
             <div className="search-bar-container">
-              <SearchBar />
+              <SearchBar setSearchQuery={setSearchQuery}/>
             </div>
           </div>
           <div className="row">
@@ -68,11 +74,11 @@ function Home() {
             ))}
             </div>
             <div className="d-flex justify-content-center mt-4">
-            <CustomIcons
-            count={totalpages}
-            page={currentpage}
-            onChange={handlepage}
-            />
+              <CustomIcons
+                count={totalpages}
+                page={currentpage}
+                onChange={handlepage}
+              />
             </div>
         </div>
       </section>

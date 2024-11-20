@@ -24,32 +24,9 @@
     <div id="bg" class="container-fluid">
         <div class="row">
             
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#">Admin Panel</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav">
-                            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Change Password</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">User Management</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Subscription Plan</a></li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Report</a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="revenue-generated.html">Revenue Generated</a></li>
-                                    <li><a class="dropdown-item" href="view-count.html">View Count</a></li>
-                                    <li><a class="dropdown-item" href="#">Subscription Details</a></li>
-                                    <li><a class="dropdown-item" href="#">Cumulative Rating</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <a href="#" class="btn btn-outline-light ms-auto">Logout</a>
-                    </div>
-                </div>
-            </nav>
+            {% include 'Navbar.html' %}
+            {% block 'content' %}
+            {% endblock %}
 
             
             <div class="col-12 col-xl-8 mx-auto p-4">
@@ -76,7 +53,7 @@
 
                 <h5>Thumbnail</h5>
                 <div class="mb-4">
-                    <img src="{{movie_list.thumbnail}}" alt="Inception Thumbnail 1" class="img-thumbnail" width="150">
+                    <img src="{{movie_list.thumbnail}}" alt="Thumbnail" class="img-thumbnail" width="150">
                 </div>
             </div>
         </div>

@@ -2,7 +2,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('login',views.login,name='login'),
+    path('login',views.login,name='Login'),
     path('content',views.content,name='home'),
     path('create',views.movie_create,name='create'),
     path('view/<int:id>',views.movie_view,name='view'),
@@ -12,4 +12,7 @@ urlpatterns = [
     path('contenthistory/<int:user_id>',views.content_history,name='contenthistory'),
     path('block/<int:id>',views.block,name='block'),
     path('unblock/<int:id>',views.unblock,name='unblock'),
+    path('viewcount',views.movie_count,name='count'),
+    path('logout',views.logout,name='logout'),
+    path('changepassword',views.changepassword,name='change_password'),
 ]

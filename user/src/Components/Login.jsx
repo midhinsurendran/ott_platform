@@ -4,7 +4,7 @@ import './Login.css';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-function Login() {
+function Login({ setIsAuthenticated }) {
   var [email,setEmail] = useState('');
   var [password,setPassword] = useState('');
   var [message,setMessage] = useState('');
@@ -21,6 +21,7 @@ function Login() {
       console.log(response)
       localStorage.setItem('token',token)
       setMessage('')
+      setIsAuthenticated(true);
      navigate('/home')
     }).catch(error=>{
       if(error.response.data){

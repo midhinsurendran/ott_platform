@@ -73,7 +73,9 @@ const MovieCard = ({ id,thumbnail, title, rating, initialWatchLater }) => {
 
   return (
     <div className="movie-card" onClick={handleClick} style={{ cursor: "pointer" }}>
-      <img src={thumbnail} alt={title} className="movie-card__image" />
+      <img src={thumbnail} alt={title} className="movie-card__image" 
+       style={{ width: '100%', height: '275px', objectFit: 'cover' }}
+      />
       <div className="movie-card__details">
         <span className="movie-card__title">{title}</span>
         <span className="movie-card__rating">Rating: {rating}</span>
